@@ -18,11 +18,15 @@ Script em Node.js que modifica o **Kapps** já instalado, adicionando recursos n
 
 ### Relatives
 <img width="432" height="225" alt="Captura de tela 2026-10-21 154322" src="https://github.com/user-attachments/assets/118c7d30-d2ef-4860-9b15-7a8ce365a6b0" />
+
+
 - **Bandeira do país** ao lado de cada piloto, com opção para ligar/desligar nas configurações.
 - SOF também calculado em team racing.
 
 ### Fuel Calculator
 <img width="373" height="112" alt="Captura de tela 2026-10-21 154751" src="https://github.com/user-attachments/assets/695f0b96-06bd-44dc-9af1-f9a4f22971aa" />
+
+
 - **Novo layout** em 4 colunas e 2 linhas: Fuel Level, Laps Remain, Fuel at End, PIT / Average, Last, L+1 e ADD.
 - **Fuel at End**: combustível que sobra no fim da corrida. Na pista, mostra quanto vai sobrar (ou faltar, em negativo). No box, atualiza em tempo real enquanto você abastece.
 - **ADD**: quanto abastecer para terminar a corrida, com as voltas restantes e o ritmo usado no cálculo.
@@ -31,6 +35,7 @@ Script em Node.js que modifica o **Kapps** já instalado, adicionando recursos n
 
 ### Inputs Graph (visual novo)
 <img width="477" height="117" alt="Captura de tela 2026-10-21 154349" src="https://github.com/user-attachments/assets/69de11f3-9742-42fc-a5f6-071bcb57dd5c" />
+
 - **Marcha e velocidade** em destaque, com unidade Auto (segue o iRacing), km/h ou mph.
 - **Volante girando** com ângulo real. Você pode usar **seus próprios volantes**: crie uma pasta `wheels` ao lado do script com imagens PNG, SVG, JPG ou WEBP; cada arquivo vira uma opção nas configurações. Tamanho ajustável.
 - **Barras de pedal** com o valor em % (embreagem, freio e acelerador).
