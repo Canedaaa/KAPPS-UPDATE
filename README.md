@@ -60,3 +60,63 @@ Script em Node.js que modifica o **Kapps** já instalado, adicionando recursos n
 3. Vá até C:\Users\Seu Usuario\AppData\Local\kapps\app-1.24.40\resources. apague o arquivo app.asar e renomeie app.asar.original-backup para app.asar
 4. Execute o arquivo .bat aplicar atualização
 3. Abra o Kapps de novo.
+
+=========================================================================ENGLISH VERSION==================================================================================================================
+
+A Node.js script that modifies an already installed **Kapps**, adding new features and improving existing widgets.
+
+> Unofficial project, not affiliated with the creators of Kapps. Use at your own risk.
+
+## What the patch adds
+
+### Standings
+- **Country flag column** for each driver (appears in the default columns, right after the name). Drivers without a country show a globe icon.
+- **Standings window width fix** in the overlay/OBS. Without it, the flag column made the window appear cut off or impossible to resize.
+- **Fix in the Kapps main process**, which crashed when opening a layer's windows while the flag column was active.
+- **SOF also in endurance / team racing**. The original Kapps only calculates SOF when it is not a team race. Here it uses the average iRating of the drivers in each car.
+
+### Relatives
+- **Country flag** next to each driver, with an option to turn it on/off in the settings.
+- SOF also calculated in team racing.
+
+### Fuel Calculator
+- **New layout** with 4 columns and 2 rows: Fuel Level, Laps Remain, Fuel at End, PIT / Average, Last, L+1 and ADD.
+- **Fuel at End**: fuel left at the end of the race. On track, it shows how much will be left over (or missing, as a negative number). In the pits, it updates in real time while you refuel.
+- **ADD**: how much to add to finish the race, with the remaining laps and the pace used in the calculation.
+- **Target laps (L+1)**: fuel per lap needed to do one extra lap with the current fuel. There is an option in the settings to turn it on/off.
+- **Time lost in the pits**: in timed races, the time spent in the pit lane and stopped is subtracted from the remaining time before counting laps. The value is learned per track at each stop and stored in the Kapps browser. On the first stop at a track, it uses a default value.
+
+### Inputs Graph (new look)
+- **Gear and speed** highlighted, with unit set to Auto (follows iRacing), km/h or mph.
+- **Rotating steering wheel** with the real angle. You can use **your own wheels**: create a `wheels` folder next to the script with PNG, SVG, JPG or WEBP images; each file becomes an option in the settings. Adjustable size.
+- **Pedal bars** with the value in % (clutch, brake and throttle).
+- **ABS drawn on top of the brake line**.
+- **Two layout styles** (Style 1 and Style 2, the latter with everything inside a dark panel with a rounded right side). Spacing, sizes and positions can be adjusted at the top of the script.
+
+### New or replaced widgets
+- **Weather** shows Track, Air, Wind (with arrow and compass), Humidity, Wetness and Track State, with options to show/hide blocks and background color/opacity.
+- **PitBrake**: pit entry balloon with the **WAIT, BRAKE and HOLD** stages, calculated from telemetry.
+- **Rejoin Helper** (new tab): a balloon that appears when you leave the track or spin, showing the time to the nearest car behind you. It turns green (Clear), yellow (Caution) or red (Danger), with adjustable thresholds in the settings.
+- **Custom Twitch Chat** (Twitch + YouTube) replacing the original, with messages in separate bubbles, adjustable spacing between bubbles and background color/opacity.
+- **Custom Twitch Counters**, showing Twitch and YouTube viewers. You can display just one platform or both, and adjust background color, opacity, corners, shadow and alignment.
+
+### Pit Stop Helper
+- **Independent Pit Limiter**: the LIMITER indicator no longer depends on the pit-lane bars option, and sits at the top of the widget, above the bars.
+
+### Settings
+- Original **Standings (Legacy)** and **Pedals** tabs removed.
+- Racing Overlay panels **sorted**: enabled ones appear first and disabled ones after.
+
+## How to Install From Scratch
+1. Update Kapps to the latest version, 1.24.40.
+2. Extract the zip and leave it in the Documents folder.
+3. Close Kapps completely.
+4. Open the file `aplicar atualização`.
+5. Open Kapps again.
+
+## How to Install If You Previously Installed a Widget Manually
+1. Update Kapps to the latest version, 1.24.40.
+2. Close Kapps completely.
+3. Go to `C:\Users\Your User\AppData\Local\kapps\app-1.24.40\resources`. Delete the `app.asar` file and rename `app.asar.original-backup` to `app.asar`.
+4. Open the file `aplicar atualização`.
+5. Open Kapps again.
