@@ -1,7 +1,3 @@
-<img width="127" height="56" alt="Captura de tela 2026-10-21 154333" src="https://github.com/user-attachments/assets/b8beba2a-c30d-47d3-87f4-40b78b9b40e9" />
-
-
-
 # KAPPS-UPDATE
 
 
