@@ -1,4 +1,6 @@
-# KAPPS-UPDATE  ENGLISH VERSION BELOW THIS ONE
+   # KAPPS-UPDATE
+   
+ENGLISH VERSION BELOW THIS ONE
 
 
 Script em Node.js que modifica o **Kapps** já instalado, adicionando recursos novos e melhorando widgets existentes.
