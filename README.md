@@ -61,7 +61,7 @@ Script em Node.js que modifica o **Kapps** já instalado, adicionando recursos n
 4. Execute o arquivo .bat aplicar atualização
 3. Abra o Kapps de novo.
 
-=========================================================================ENGLISH VERSION==================================================================================================================
+==============================ENGLISH VERSION====================================
 
 A Node.js script that modifies an already installed **Kapps**, adding new features and improving existing widgets.
 
