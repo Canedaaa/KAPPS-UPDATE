@@ -137,7 +137,7 @@ A Node.js script that modifies an already installed **Kapps**, adding new featur
 
 ### New or replaced widgets
 - **Weather** shows Track, Air, Wind (with arrow and compass), Humidity, Wetness and Track State, with options to show/hide blocks and background color/opacity.
-  <img width="192" height="341" alt="Captura de tela 2026-10-21 154356" src="https://github.com/user-attachments/assets/40b6080e-a614-4406-95dd-26d92215575b" />
+<img width="192" height="341" alt="Captura de tela 2026-10-21 154356" src="https://github.com/user-attachments/assets/40b6080e-a614-4406-95dd-26d92215575b" />
 
   
 - **PitBrake**: pit entry balloon with the **WAIT, BRAKE and HOLD** stages, calculated from telemetry.
