@@ -102,6 +102,8 @@ A Node.js script that modifies an already installed **Kapps**, adding new featur
 
 ### Standings
 <img width="628" height="1078" alt="Captura de tela 2026-10-20 224221" src="https://github.com/user-attachments/assets/eb995a70-9dd7-495f-ab6c-f9c9df1e80c5" />
+
+
 - **Country flag column** for each driver (appears in the default columns, right after the name). Drivers without a country show a globe icon.
 - **Standings window width fix** in the overlay/OBS. Without it, the flag column made the window appear cut off or impossible to resize.
 - **Fix in the Kapps main process**, which crashed when opening a layer's windows while the flag column was active.
@@ -109,11 +111,15 @@ A Node.js script that modifies an already installed **Kapps**, adding new featur
 
 ### Relatives
 <img width="432" height="225" alt="Captura de tela 2026-10-21 154322" src="https://github.com/user-attachments/assets/118c7d30-d2ef-4860-9b15-7a8ce365a6b0" />
+
+
 - **Country flag** next to each driver, with an option to turn it on/off in the settings.
 - SOF also calculated in team racing.
 
 ### Fuel Calculator
 <img width="373" height="112" alt="Captura de tela 2026-10-21 154751" src="https://github.com/user-attachments/assets/695f0b96-06bd-44dc-9af1-f9a4f22971aa" />
+
+
 - **New layout** with 4 columns and 2 rows: Fuel Level, Laps Remain, Fuel at End, PIT / Average, Last, L+1 and ADD.
 - **Fuel at End**: fuel left at the end of the race. On track, it shows how much will be left over (or missing, as a negative number). In the pits, it updates in real time while you refuel.
 - **ADD**: how much to add to finish the race, with the remaining laps and the pace used in the calculation.
@@ -122,6 +128,7 @@ A Node.js script that modifies an already installed **Kapps**, adding new featur
 
 ### Inputs Graph (new look)
 <img width="477" height="117" alt="Captura de tela 2026-10-21 154349" src="https://github.com/user-attachments/assets/69de11f3-9742-42fc-a5f6-071bcb57dd5c" />
+
 - **Gear and speed** highlighted, with unit set to Auto (follows iRacing), km/h or mph.
 - **Rotating steering wheel** with the real angle. You can use **your own wheels**: create a `wheels` folder next to the script with PNG, SVG, JPG or WEBP images; each file becomes an option in the settings. Adjustable size.
 - **Pedal bars** with the value in % (clutch, brake and throttle).
@@ -131,15 +138,28 @@ A Node.js script that modifies an already installed **Kapps**, adding new featur
 ### New or replaced widgets
 - **Weather** shows Track, Air, Wind (with arrow and compass), Humidity, Wetness and Track State, with options to show/hide blocks and background color/opacity.
   <img width="192" height="341" alt="Captura de tela 2026-10-21 154356" src="https://github.com/user-attachments/assets/40b6080e-a614-4406-95dd-26d92215575b" />
+
+  
 - **PitBrake**: pit entry balloon with the **WAIT, BRAKE and HOLD** stages, calculated from telemetry.
+ 
  <img width="268" height="155" alt="Captura de tela 2026-10-21 154945" src="https://github.com/user-attachments/assets/d2a52214-4501-4307-a95f-047ae5c9d98f" />
+ 
  <img width="217" height="110" alt="Captura de tela 2026-10-21 154959" src="https://github.com/user-attachments/assets/cba7e6ce-16e0-451f-9557-3781bc0a0b20" />
+ 
  <img width="225" height="118" alt="Captura de tela 2026-10-21 155006" src="https://github.com/user-attachments/assets/25380823-6722-4ddf-b810-cf608dfe99f0" />
+
+ 
 - **Rejoin Helper** (new tab): a balloon that appears when you leave the track or spin, showing the time to the nearest car behind you. It turns green (Clear), yellow (Caution) or red (Danger), with adjustable thresholds in the settings.
  <img width="529" height="195" alt="Captura de tela 2026-10-21 154318" src="https://github.com/user-attachments/assets/8237b1fe-8962-4405-8a28-c6d7e103d781" />
+
+ 
 - **Custom Twitch Chat** (Twitch + YouTube) replacing the original, with messages in separate bubbles, adjustable spacing between bubbles and background color/opacity.
+ 
  <img width="448" height="172" alt="Captura de tela 2026-10-21 154329" src="https://github.com/user-attachments/assets/9338dcc7-43c4-4865-8766-d9a56adbe6df" />
+
+ 
 - **Custom Twitch Counters**, showing Twitch and YouTube viewers. You can display just one platform or both, and adjust background color, opacity, corners, shadow and alignment.
+
  <img width="127" height="56" alt="Captura de tela 2026-10-21 154333" src="https://github.com/user-attachments/assets/b8beba2a-c30d-47d3-87f4-40b78b9b40e9" />
 
 
