@@ -45,15 +45,29 @@ Script em Node.js que modifica o **Kapps** já instalado, adicionando recursos n
 ### Widgets novos ou substituídos
 - **Weather** mostra Track, Air, Wind (com seta e bússola), Humidity, Wetness e Track State, com opções para mostrar/ocultar blocos e cor/opacidade do fundo.
  <img width="192" height="341" alt="Captura de tela 2026-10-21 154356" src="https://github.com/user-attachments/assets/40b6080e-a614-4406-95dd-26d92215575b" />
+
+ 
 - **PitBrake** balão de entrada no box com os estágios **WAIT, BRAKE e HOLD**, calculado pela telemetria.
+
  <img width="268" height="155" alt="Captura de tela 2026-10-21 154945" src="https://github.com/user-attachments/assets/d2a52214-4501-4307-a95f-047ae5c9d98f" />
+ 
  <img width="217" height="110" alt="Captura de tela 2026-10-21 154959" src="https://github.com/user-attachments/assets/cba7e6ce-16e0-451f-9557-3781bc0a0b20" />
+ 
  <img width="225" height="118" alt="Captura de tela 2026-10-21 155006" src="https://github.com/user-attachments/assets/25380823-6722-4ddf-b810-cf608dfe99f0" />
+
+ 
 - **Rejoin Helper** (aba nova): balão que aparece quando você sai da pista ou roda, mostrando o tempo até o carro mais próximo atrás de você. Fica verde (Clear), amarelo (Caution) ou vermelho (Danger), com limites ajustáveis nas configurações.
+- 
  <img width="529" height="195" alt="Captura de tela 2026-10-21 154318" src="https://github.com/user-attachments/assets/8237b1fe-8962-4405-8a28-c6d7e103d781" />
+
+ 
 - **Twitch Chat** próprio (Twitch + YouTube) no lugar do original, com mensagens em balões separados, espaço entre balões ajustável e cor/opacidade do fundo.
+ 
  <img width="448" height="172" alt="Captura de tela 2026-10-21 154329" src="https://github.com/user-attachments/assets/9338dcc7-43c4-4865-8766-d9a56adbe6df" />
+
+ 
 - **Twitch Counters** próprio, mostrando os viewers do Twitch e do YouTube. Dá para exibir só uma plataforma ou as duas, e ajustar cor do fundo, opacidade, cantos, sombra e alinhamento.
+ 
  <img width="127" height="56" alt="Captura de tela 2026-10-21 154333" src="https://github.com/user-attachments/assets/b8beba2a-c30d-47d3-87f4-40b78b9b40e9" />
 
 
