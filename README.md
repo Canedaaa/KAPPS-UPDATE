@@ -57,7 +57,6 @@ Script em Node.js que modifica o **Kapps** já instalado, adicionando recursos n
 
  
 - **Rejoin Helper** (aba nova): balão que aparece quando você sai da pista ou roda, mostrando o tempo até o carro mais próximo atrás de você. Fica verde (Clear), amarelo (Caution) ou vermelho (Danger), com limites ajustáveis nas configurações.
-- 
  <img width="529" height="195" alt="Captura de tela 2026-10-21 154318" src="https://github.com/user-attachments/assets/8237b1fe-8962-4405-8a28-c6d7e103d781" />
 
  
