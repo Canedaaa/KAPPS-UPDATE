@@ -1,3 +1,4 @@
+<img width="1919" height="1079" alt="Captura de tela 2026-10-21 100128" src="https://github.com/user-attachments/assets/0aa0768d-3fe5-4659-bb69-dcc0e7cc4f01" />
 # KAPPS-UPDATE
 
 
