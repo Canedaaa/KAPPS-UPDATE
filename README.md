@@ -22,7 +22,7 @@ Script em Node.js que modifica o **Kapps** já instalado, adicionando recursos n
 - **Fuel at End**: combustível que sobra no fim da corrida. Na pista, mostra quanto vai sobrar (ou faltar, em negativo). No box, atualiza em tempo real enquanto você abastece.
 - **ADD**: quanto abastecer para terminar a corrida, com as voltas restantes e o ritmo usado no cálculo.
 - **Target laps (L+1)**: consumo por volta necessário para fazer uma volta a mais com o combustível atual. Há uma opção nas configurações para ligar/desligar.
-- **Tempo perdido no box**: em corrida por tempo, o tempo da pit lane e da parada é descontado do tempo restante antes de contar as voltas. O valor é aprendido por pista a cada parada e guardado no navegador do Kapps. Na primeira parada de uma pista usa um valor padrão (`PIT_LOSS_SECONDS`, 30 s, editável no script).
+- **Tempo perdido no box**: em corrida por tempo, o tempo da pit lane e da parada é descontado do tempo restante antes de contar as voltas. O valor é aprendido por pista a cada parada e guardado no navegador do Kapps. Na primeira parada de uma pista usa um valor padrão.
 
 ### Inputs Graph (visual novo)
 - **Marcha e velocidade** em destaque, com unidade Auto (segue o iRacing), km/h ou mph.
@@ -54,8 +54,8 @@ Script em Node.js que modifica o **Kapps** já instalado, adicionando recursos n
 3. Abra o Kapps de novo.
 
 ## Como Instalar Caso Você Tenha Instalado um widget manualmente
-1. Atualize o Kapps para a ultima versão 1-24.40
+1. Atualize o Kapps para a última versão 1-24.40
 2. Feche o Kapps completamente.
-3. Vá até C:\Users\Seu Usuario\AppData\Local\kapps\app-1.24.40\resources. apague app.asar e renomeie app.asar.original-backup para app.asar
-4. Execute o arquvo .bat aplicar atualização
+3. Vá até C:\Users\Seu Usuario\AppData\Local\kapps\app-1.24.40\resources. apague o arquivo app.asar e renomeie app.asar.original-backup para app.asar
+4. Execute o arquivo .bat aplicar atualização
 3. Abra o Kapps de novo.
