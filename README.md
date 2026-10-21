@@ -9,6 +9,8 @@ Script em Node.js que modifica o **Kapps** já instalado, adicionando recursos n
 
 ### Standings
 <img width="628" height="1078" alt="Captura de tela 2026-10-20 224221" src="https://github.com/user-attachments/assets/eb995a70-9dd7-495f-ab6c-f9c9df1e80c5" />
+
+
 - **Coluna de bandeira do país** de cada piloto (aparece nas colunas padrão, logo depois do nome). Pilotos sem país definido mostram um ícone de globo.
 - **Correção da largura da janela do Standings** no overlay/OBS. Sem isso, a coluna da bandeira fazia a janela aparecer cortada ou sem poder ser redimensionada.
 - **Correção no processo principal do Kapps**, que travava a abertura das janelas de uma layer quando a coluna da bandeira estava ativa.
