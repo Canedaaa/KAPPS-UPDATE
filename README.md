@@ -78,19 +78,12 @@ Script em Node.js que modifica o **Kapps** já instalado, adicionando recursos n
 - Painéis do Racing Overlay **ordenados**: os ligados aparecem primeiro e os desligados depois.
 
 
-## Como Instalar Do Zero
+## Como Instalar 
 1. Atualize o Kapps para a ultima versão 1-24.40
 2. extraia o zip e deixe-o na pasta doucumento
-4. Feche o Kapps completamente.
-5. Execute o arquivo aplicar atualização e de entrer no cmd
+5. Execute o arquivo aplicar atualização 
 3. Abra o Kapps de novo.
 
-## Como Instalar Caso Você Tenha Instalado um widget manualmente
-1. Atualize o Kapps para a última versão 1-24.40
-2. Feche o Kapps completamente.
-3. Vá até C:\Users\Seu Usuario\AppData\Local\kapps\app-1.24.40\resources. apague o arquivo app.asar e renomeie app.asar.original-backup para app.asar
-4. Execute o arquivo .bat aplicar atualização
-3. Abra o Kapps de novo.
 
 ================ENGLISH VERSION=================
 
@@ -170,16 +163,8 @@ A Node.js script that modifies an already installed **Kapps**, adding new featur
 - Original **Standings (Legacy)** and **Pedals** tabs removed.
 - Racing Overlay panels **sorted**: enabled ones appear first and disabled ones after.
 
-## How to Install From Scratch
+## How to Install 
 1. Update Kapps to the latest version, 1.24.40.
 2. Extract the zip and leave it in the Documents folder.
-3. Close Kapps completely.
-4. Open the file `aplicar atualização`.
-5. Open Kapps again.
-
-## How to Install If You Previously Installed a Widget Manually
-1. Update Kapps to the latest version, 1.24.40.
-2. Close Kapps completely.
-3. Go to `C:\Users\Your User\AppData\Local\kapps\app-1.24.40\resources`. Delete the `app.asar` file and rename `app.asar.original-backup` to `app.asar`.
 4. Open the file `aplicar atualização`.
 5. Open Kapps again.
