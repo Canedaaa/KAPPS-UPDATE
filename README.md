@@ -17,14 +17,15 @@ Script em Node.js que modifica o **Kapps** já instalado, adicionando recursos n
 - **SOF também em endurance / team racing**. O Kapps original só calcula o SOF quando não é corrida de equipe. Aqui ele usa a média de iRating dos pilotos de cada carro.
 
 ### Relatives
-<img width="432" height="225" alt="Captura de tela 2026-10-21 154322" src="https://github.com/user-attachments/assets/118c7d30-d2ef-4860-9b15-7a8ce365a6b0" />
+<img width="753" height="370" alt="image" src="https://github.com/user-attachments/assets/a1f34a07-5ce8-47d0-bb49-6ed27a105176" />
+
 
 
 - **Bandeira do país** ao lado de cada piloto, com opção para ligar/desligar nas configurações.
 - SOF também calculado em team racing.
 
 ### Fuel Calculator
-<img width="373" height="112" alt="Captura de tela 2026-10-21 154751" src="https://github.com/user-attachments/assets/695f0b96-06bd-44dc-9af1-f9a4f22971aa" />
+<img width="391" height="141" alt="image" src="https://github.com/user-attachments/assets/8bdd6116-92d3-44e8-88ae-bff910aa51e5" />
 
 
 - **Novo layout** em 4 colunas e 2 linhas: Fuel Level, Laps Remain, Fuel at End, PIT / Average, Last, L+1 e ADD.
@@ -34,7 +35,7 @@ Script em Node.js que modifica o **Kapps** já instalado, adicionando recursos n
 - **Tempo perdido no box**: em corrida por tempo, o tempo da pit lane e da parada é descontado do tempo restante antes de contar as voltas. O valor é aprendido por pista a cada parada e guardado no navegador do Kapps. Na primeira parada de uma pista usa um valor padrão.
 
 ### Inputs Graph (visual novo)
-<img width="477" height="117" alt="Captura de tela 2026-10-21 154349" src="https://github.com/user-attachments/assets/69de11f3-9742-42fc-a5f6-071bcb57dd5c" />
+<img width="444" height="78" alt="image" src="https://github.com/user-attachments/assets/4c9410d5-9203-437c-9777-335afabe08d1" />
 
 - **Marcha e velocidade** em destaque, com unidade Auto (segue o iRacing), km/h ou mph.
 - **Volante girando** com ângulo real. Você pode usar **seus próprios volantes**: crie uma pasta `wheels` ao lado do script com imagens PNG, SVG, JPG ou WEBP; cada arquivo vira uma opção nas configurações. Tamanho ajustável.
@@ -43,9 +44,10 @@ Script em Node.js que modifica o **Kapps** já instalado, adicionando recursos n
 - **Dois estilos de layout** (Style 1 e Style 2, este com tudo dentro de um painel escuro de lado direito arredondado). Espaços, tamanhos e posições são ajustáveis no começo do script.
 
 ### Widgets novos ou substituídos
-- **Weather** mostra Track, Air, Wind (com seta e bússola), Humidity, Wetness e Track State, com opções para mostrar/ocultar blocos e cor/opacidade do fundo.
- <img width="192" height="341" alt="Captura de tela 2026-10-21 154356" src="https://github.com/user-attachments/assets/40b6080e-a614-4406-95dd-26d92215575b" />
+- **Weather** mostra Track, Air, Humidity, Wetness e Track State e cor/opacidade do fundo.
+ <img width="603" height="86" alt="image" src="https://github.com/user-attachments/assets/a4e3c032-f563-466f-b7b9-4749575c6631" />
 
+ <img width="303" height="165" alt="image" src="https://github.com/user-attachments/assets/86609961-c1be-4b9c-bfa1-7535211828db" />
  
 - **PitBrake** balão de entrada no box com os estágios **WAIT, BRAKE e HOLD**, calculado pela telemetria.
 
