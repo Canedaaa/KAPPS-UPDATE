@@ -1,172 +1,160 @@
-   # KAPPS-UPDATE / ENGLISH VERSION BELOW THIS ONE 
+# Kapps Mods for iRacing
 
+A patch for the **Kapps** iRacing overlay that adds new widgets, improves the existing ones and fixes some bugs. Everything is changed inside Kapps itself: you keep using the normal Kapps settings, profiles and overlay.
 
-Script em Node.js que modifica o **Kapps** já instalado, adicionando recursos novos e melhorando widgets existentes.
+> This is an unofficial community mod. It is not made or supported by the Kapps developer.
 
-> Projeto não oficial, sem relação com os criadores do Kapps. Use por sua conta e risco.
+---
 
-## O que o patch adiciona
+## Installation
 
-### Standings
-<img width="628" height="1078" alt="Captura de tela 2026-10-20 224221" src="https://github.com/user-attachments/assets/eb995a70-9dd7-495f-ab6c-f9c9df1e80c5" />
+1. Download **`aplicar_atualizacao.bat`** and **`atualizacao.js`** and put them in the **same folder**.
+   - Optional: a folder called **`wheels`** in that same folder, with your own steering wheel images for the Inputs Graph (see below).
+2. Double-click **`aplicar_atualizacao.bat`**.
+3. Press **1** (or wait 10 seconds) to apply the mods.
+4. Wait for **"Done! Mods applied."** and open Kapps again.
 
+What the installer does:
+- Finds the newest Kapps version installed on your PC.
+- Closes Kapps if it is open.
+- Saves a backup of the original Kapps the first time (`app.asar.original-backup`).
+- Always applies the mods **on top of the original**, so you can run it again after every update of the mod.
+- If something goes wrong, Kapps is left with the **original** file, so it never ends up broken.
 
-- **Coluna de bandeira do país** de cada piloto (aparece nas colunas padrão, logo depois do nome). Pilotos sem país definido mostram um ícone de globo.
-- **Correção da largura da janela do Standings** no overlay/OBS. Sem isso, a coluna da bandeira fazia a janela aparecer cortada ou sem poder ser redimensionada.
-- **Correção no processo principal do Kapps**, que travava a abertura das janelas de uma layer quando a coluna da bandeira estava ativa.
-- **SOF também em endurance / team racing**. O Kapps original só calcula o SOF quando não é corrida de equipe. Aqui ele usa a média de iRating dos pilotos de cada carro.
+You don't need to install Node.js or anything else: the installer uses the Kapps program itself.
 
-### Relatives
-<img width="753" height="370" alt="image" src="https://github.com/user-attachments/assets/a1f34a07-5ce8-47d0-bb49-6ed27a105176" />
+### Updating the mod
+Download the new `atualizacao.js`, replace the old one and run `aplicar_atualizacao.bat` again.
 
+### After a Kapps update
+When Kapps updates itself, the mods are removed. Just run `aplicar_atualizacao.bat` again.
 
+### Removing the mods
+Run `aplicar_atualizacao.bat` and press **2 - Restore original Kapps** (or use `restaurar-kapps.bat`).
 
-- **Bandeira do país** ao lado de cada piloto, com opção para ligar/desligar nas configurações.
-- SOF também calculado em team racing.
+---
 
-### Fuel Calculator
-<img width="391" height="141" alt="image" src="https://github.com/user-attachments/assets/8bdd6116-92d3-44e8-88ae-bff910aa51e5" />
+## New widgets
 
+### Wind
+- Your car seen from above in the middle (it never moves) and a dark disc around it.
+- The **N / E / S / W** letters and the **blue arrow** turn around the car as you drive. The arrow always shows the side the wind is hitting you from.
+- Top-right corner: where the wind comes from on the map (N, NE, E, SE, S, SW, W, NW).
+- Below: wind speed and where it hits the car (Headwind, Crosswind R/L, Tailwind...).
+- Options: **Português** labels, background color and opacity, hide in replay / when iRacing is not running.
 
-- **Novo layout** em 4 colunas e 2 linhas: Fuel Level, Laps Remain, Fuel at End, PIT / Average, Last, L+1 e ADD.
-- **Fuel at End**: combustível que sobra no fim da corrida. Na pista, mostra quanto vai sobrar (ou faltar, em negativo). No box, atualiza em tempo real enquanto você abastece.
-- **ADD**: quanto abastecer para terminar a corrida, com as voltas restantes e o ritmo usado no cálculo.
-- **Target laps (L+1)**: consumo por volta necessário para fazer uma volta a mais com o combustível atual. Há uma opção nas configurações para ligar/desligar.
-- **Tempo perdido no box**: em corrida por tempo, o tempo da pit lane e da parada é descontado do tempo restante antes de contar as voltas. O valor é aprendido por pista a cada parada e guardado no navegador do Kapps. Na primeira parada de uma pista usa um valor padrão.
+### Pit Rejoin
+"If I pit **now**, where do I come out?"
+- Shows your class position now → after the stop (e.g. **P5 ▶ P8**), plus the car just ahead (▲) and just behind (▼) you at the pit exit, with the gaps.
+- Turns red when you would rejoin in traffic (gap smaller than the **Traffic** setting, default 1.5 s).
+- **Pit loss** (the time a stop costs you) is learned automatically by the Fuel Calculator every time you stop, saved per track and per series. With nothing learned yet, it uses the value from the settings (default 30 s).
+- The Fuel Calculator must be open during a stop to learn the pit loss.
+- Hides while you are in the pit lane or off track.
+- Limitation: it assumes the other drivers don't pit at the same time.
 
-### Inputs Graph (visual novo)
-<img width="444" height="78" alt="image" src="https://github.com/user-attachments/assets/4c9410d5-9203-437c-9777-335afabe08d1" />
+### Rejoin Helper
+- A bubble that shows up when you go off track, spin or stop on track, with the time (in seconds) to the closest car **behind** you.
+- **Green / Clear**, **Yellow / Caution** or **Red / Danger**. The limits are set in the settings.
+- Only shows if that car is close enough (**Show only if**, default 10 s), and disappears as soon as you are back on track and driving normally.
 
-- **Marcha e velocidade** em destaque, com unidade Auto (segue o iRacing), km/h ou mph.
-- **Volante girando** com ângulo real. Você pode usar **seus próprios volantes**: crie uma pasta `wheels` ao lado do script com imagens PNG, SVG, JPG ou WEBP; cada arquivo vira uma opção nas configurações. Tamanho ajustável.
-- **Barras de pedal** com o valor em % (embreagem, freio e acelerador).
-- **ABS desenhado em cima da linha de freio**.
-- **Dois estilos de layout** (Style 1 e Style 2, este com tudo dentro de um painel escuro de lado direito arredondado). Espaços, tamanhos e posições são ajustáveis no começo do script.
+### PitBrake (replaces "Twitch Followers Notification")
+- Pit entry helper: **WAIT → BRAKE → HOLD**, so you know when to brake for the pit lane speed limit.
+- Everything comes from telemetry, no setup needed.
 
-### Widgets novos ou substituídos
-- **Weather** mostra Track, Air, Humidity, Wetness e Track State e cor/opacidade do fundo.
- <img width="603" height="86" alt="image" src="https://github.com/user-attachments/assets/a4e3c032-f563-466f-b7b9-4749575c6631" />
+### Weather (replaces "MGU")
+- Track temperature, air temperature, humidity, track usage and a wetness bar (with sun and drop icons).
+- **Layout**: **Vertical** (grid) or **Horizontal** (one line).
+- Rounded corners. The wind is in its own **Wind** widget.
 
- <img width="303" height="165" alt="image" src="https://github.com/user-attachments/assets/86609961-c1be-4b9c-bfa1-7535211828db" />
- 
-- **PitBrake** balão de entrada no box com os estágios **WAIT, BRAKE e HOLD**, calculado pela telemetria.
+### Radar (replaces "Car Left Right")
+- Keeps the original Kapps lines and adds an optional **Radar style**: your car (green) in the middle, the car next to you (white) in its real position and a red glow on the side where there is a car.
+- The red glow fades out at the top and bottom.
 
- <img width="268" height="155" alt="Captura de tela 2026-10-21 154945" src="https://github.com/user-attachments/assets/d2a52214-4501-4307-a95f-047ae5c9d98f" />
- 
- <img width="217" height="110" alt="Captura de tela 2026-10-21 154959" src="https://github.com/user-attachments/assets/cba7e6ce-16e0-451f-9557-3781bc0a0b20" />
- 
- <img width="225" height="118" alt="Captura de tela 2026-10-21 155006" src="https://github.com/user-attachments/assets/25380823-6722-4ddf-b810-cf608dfe99f0" />
+### Stream Chat (in the "Twitch Chat" tab)
+- **Twitch and YouTube** chat in the same widget (**Show chat from**: one or both).
+- **Chat style**: message bubbles or full background. Message spacing, background color and opacity.
 
- 
-- **Rejoin Helper** (aba nova): balão que aparece quando você sai da pista ou roda, mostrando o tempo até o carro mais próximo atrás de você. Fica verde (Clear), amarelo (Caution) ou vermelho (Danger), com limites ajustáveis nas configurações.
- <img width="529" height="195" alt="Captura de tela 2026-10-21 154318" src="https://github.com/user-attachments/assets/8237b1fe-8962-4405-8a28-c6d7e103d781" />
+### Counters (Twitch + YouTube)
+- Viewer count for **Twitch and YouTube**, each with its own icon. Show one or both.
+- Background color and opacity, corners, shadow, alignment and a debug mode.
+- If a field is empty in the Counters settings, it uses the same one from the Chat settings.
 
- 
-- **Twitch Chat** próprio (Twitch + YouTube) no lugar do original, com mensagens em balões separados, espaço entre balões ajustável e cor/opacidade do fundo.
- 
- <img width="448" height="172" alt="Captura de tela 2026-10-21 154329" src="https://github.com/user-attachments/assets/9338dcc7-43c4-4865-8766-d9a56adbe6df" />
+---
 
- 
-- **Twitch Counters** próprio, mostrando os viewers do Twitch e do YouTube. Dá para exibir só uma plataforma ou as duas, e ajustar cor do fundo, opacidade, cantos, sombra e alinhamento.
- 
- <img width="127" height="56" alt="Captura de tela 2026-10-21 154333" src="https://github.com/user-attachments/assets/b8beba2a-c30d-47d3-87f4-40b78b9b40e9" />
-
-
-### Pit Stop Helper
-- **Pit Limiter independente**: o indicador LIMITER não depende mais da opção das barras de pit-lane, e fica no topo do widget, acima das barras.
-
-### Configurações
-- Abas originais **Standings (Legacy)** e **Pedals** removidas.
-- Painéis do Racing Overlay **ordenados**: os ligados aparecem primeiro e os desligados depois.
-
-
-## Como Instalar 
-1. Atualize o Kapps para a ultima versão 1-24.40
-2. extraia o zip e deixe-o na pasta doucumento
-5. Execute o arquivo aplicar atualização 
-3. Abra o Kapps de novo.
-
-
-================ENGLISH VERSION=================
-
-A Node.js script that modifies an already installed **Kapps**, adding new features and improving existing widgets.
-
-> Unofficial project, not affiliated with the creators of Kapps. Use at your own risk.
-
-## What the patch adds
+## Improved widgets
 
 ### Standings
-<img width="628" height="1078" alt="Captura de tela 2026-10-20 224221" src="https://github.com/user-attachments/assets/eb995a70-9dd7-495f-ab6c-f9c9df1e80c5" />
-
-
-- **Country flag column** for each driver (appears in the default columns, right after the name). Drivers without a country show a globe icon.
-- **Standings window width fix** in the overlay/OBS. Without it, the flag column made the window appear cut off or impossible to resize.
-- **Fix in the Kapps main process**, which crashed when opening a layer's windows while the flag column was active.
-- **SOF also in endurance / team racing**. The original Kapps only calculates SOF when it is not a team race. Here it uses the average iRating of the drivers in each car.
+- New **Fastest Lap** column (add it with the column editor). The class-best lap is shown in purple.
+- **Country Flag** column, with all flags in the same 4:3 size.
+- **Column Titles** checkbox: a small tab with **LAST LAP / FASTEST LAP** above those columns, on the first car of each class, with the same color and opacity as the rows.
+- **SOF** now also shows in endurance / team races (it uses the average iRating of the drivers of each car).
+- Fixed: the Standings window was sometimes cut off and could not be resized in the overlay.
+- Fixed: turning off the flag column now really hides it.
 
 ### Relatives
-<img width="432" height="225" alt="Captura de tela 2026-10-21 154322" src="https://github.com/user-attachments/assets/118c7d30-d2ef-4860-9b15-7a8ce365a6b0" />
+- **Country Flag** option.
+- **Last Lap** option: a column with each driver's last lap (format **3:28.2**) and a small **LAST LAP** title above it. The top bar keeps equal spaces between the items and gets smaller by itself when everything does not fit.
+- Flags by type instead of "F":
 
+| Flag | Meaning |
+|---|---|
+| **DMG** | Damage (black flag with orange circle) |
+| **PEN** | Penalty (black flag) |
+| **DQ** | Disqualified |
+| **XD** | Slowdown |
+| **DT** | Driver with a penalty in the pit lane (drive-through) |
+| **SG** | Driver with a penalty stopped in the pit (stop-and-go) |
 
-- **Country flag** next to each driver, with an option to turn it on/off in the settings.
-- SOF also calculated in team racing.
+- Driver Name Style **Joshua Rogers**: only first name and last name, without the middle names.
+
+### Inputs Graph
+- New look: gear, speed, steering wheel, pedal bars and ABS drawn over the brake line.
+- **Layout Style**: Style 1 or Style 2 (wheel on the right).
+- **Wheel Model**: choose the steering wheel. To add your own, put PNG, SVG, JPG or WEBP images (transparent background, wheel seen from the front) in a **`wheels`** folder next to the installer and run it again. Each file becomes an option with its file name.
+- **Speed Unit**: Auto (same as iRacing), km/h or mph.
+- Show or hide gear & speed, steering wheel, graph and clutch bar.
+- **Speed Extremums**: top speed before braking and apex speed (this lap / previous lap), next to the pedal bars.
+- **Fade the end of the lines** on the graph.
+- **Data Rate**: 60, 30 or 20 updates per second (lower = lighter on your PC).
+- Hide in replay / when iRacing is not running.
 
 ### Fuel Calculator
-<img width="373" height="112" alt="Captura de tela 2026-10-21 154751" src="https://github.com/user-attachments/assets/695f0b96-06bd-44dc-9af1-f9a4f22971aa" />
-
-
-- **New layout** with 4 columns and 2 rows: Fuel Level, Laps Remain, Fuel at End, PIT / Average, Last, L+1 and ADD.
-- **Fuel at End**: fuel left at the end of the race. On track, it shows how much will be left over (or missing, as a negative number). In the pits, it updates in real time while you refuel.
-- **ADD**: how much to add to finish the race, with the remaining laps and the pace used in the calculation.
-- **Target laps (L+1)**: fuel per lap needed to do one extra lap with the current fuel. There is an option in the settings to turn it on/off.
-- **Time lost in the pits**: in timed races, the time spent in the pit lane and stopped is subtracted from the remaining time before counting laps. The value is learned per track at each stop and stored in the Kapps browser. On the first stop at a track, it uses a default value.
-
-### Inputs Graph (new look)
-<img width="477" height="117" alt="Captura de tela 2026-10-21 154349" src="https://github.com/user-attachments/assets/69de11f3-9742-42fc-a5f6-071bcb57dd5c" />
-
-- **Gear and speed** highlighted, with unit set to Auto (follows iRacing), km/h or mph.
-- **Rotating steering wheel** with the real angle. You can use **your own wheels**: create a `wheels` folder next to the script with PNG, SVG, JPG or WEBP images; each file becomes an option in the settings. Adjustable size.
-- **Pedal bars** with the value in % (clutch, brake and throttle).
-- **ABS drawn on top of the brake line**.
-- **Two layout styles** (Style 1 and Style 2, the latter with everything inside a dark panel with a rounded right side). Spacing, sizes and positions can be adjusted at the top of the script.
-
-### New or replaced widgets
-- **Weather** shows Track, Air, Wind (with arrow and compass), Humidity, Wetness and Track State, with options to show/hide blocks and background color/opacity.
-<img width="192" height="341" alt="Captura de tela 2026-10-21 154356" src="https://github.com/user-attachments/assets/40b6080e-a614-4406-95dd-26d92215575b" />
-
-  
-- **PitBrake**: pit entry balloon with the **WAIT, BRAKE and HOLD** stages, calculated from telemetry.
- 
- <img width="268" height="155" alt="Captura de tela 2026-10-21 154945" src="https://github.com/user-attachments/assets/d2a52214-4501-4307-a95f-047ae5c9d98f" />
- 
- <img width="217" height="110" alt="Captura de tela 2026-10-21 154959" src="https://github.com/user-attachments/assets/cba7e6ce-16e0-451f-9557-3781bc0a0b20" />
- 
- <img width="225" height="118" alt="Captura de tela 2026-10-21 155006" src="https://github.com/user-attachments/assets/25380823-6722-4ddf-b810-cf608dfe99f0" />
-
- 
-- **Rejoin Helper** (new tab): a balloon that appears when you leave the track or spin, showing the time to the nearest car behind you. It turns green (Clear), yellow (Caution) or red (Danger), with adjustable thresholds in the settings.
- <img width="529" height="195" alt="Captura de tela 2026-10-21 154318" src="https://github.com/user-attachments/assets/8237b1fe-8962-4405-8a28-c6d7e103d781" />
-
- 
-- **Custom Twitch Chat** (Twitch + YouTube) replacing the original, with messages in separate bubbles, adjustable spacing between bubbles and background color/opacity.
- 
- <img width="448" height="172" alt="Captura de tela 2026-10-21 154329" src="https://github.com/user-attachments/assets/9338dcc7-43c4-4865-8766-d9a56adbe6df" />
-
- 
-- **Custom Twitch Counters**, showing Twitch and YouTube viewers. You can display just one platform or both, and adjust background color, opacity, corners, shadow and alignment.
-
- <img width="127" height="56" alt="Captura de tela 2026-10-21 154333" src="https://github.com/user-attachments/assets/b8beba2a-c30d-47d3-87f4-40b78b9b40e9" />
-
+- Original Kapps layout.
+- **+1 Lap**: the fuel per lap you need to use for the fuel in the tank to last **one more lap** (in green).
+- +1 Lap sits in the top row next to Laps in Race, with **PIT** on the right. In multiclass, when Kapps shows **For Leader**, For Leader moves to the bottom row. With the clock on, +1 Lap goes to the bottom row.
+- Learns the **pit loss** of each stop for the Pit Rejoin widget.
 
 ### Pit Stop Helper
-- **Independent Pit Limiter**: the LIMITER indicator no longer depends on the pit-lane bars option, and sits at the top of the widget, above the bars.
+- **Pit Limiter** is now its own option and shows at the top of the widget, above the pit lane and pedal bars.
 
-### Settings
-- Original **Standings (Legacy)** and **Pedals** tabs removed.
-- Racing Overlay panels **sorted**: enabled ones appear first and disabled ones after.
+---
 
-## How to Install 
-1. Update Kapps to the latest version, 1.24.40.
-2. Extract the zip and leave it in the Documents folder.
-4. Open the file `aplicar atualização`.
-5. Open Kapps again.
+## General
+
+- **Driver names** (Settings › Racing Overlay): removes the numbers from driver names in Relatives and Standings (e.g. "John Smith2" → "John Smith").
+- The Racing Overlay settings list shows the **enabled widgets first**.
+- The old **Standings (Legacy)** and **Pedals** widgets were removed from the list.
+- **Performance**: the overlay **FPS** field is always visible (in the original Kapps it is hidden and stuck at 30 with hardware acceleration on), and the controller / button box is read less often. Less overlay FPS = less FPS lost in iRacing.
+- **Demo / edit mode**: Standings, Relatives, Weather, Wind and the new widgets show example values, so you can position them without being in a session.
+
+---
+
+## How to turn on the options
+
+All options are in the Kapps settings (**Settings › Racing Overlay**). New options come **off** by default.
+
+| Option | Where | What to do |
+|---|---|---|
+| Wind | Racing Overlay › **Wind** | Turn the widget on. **Language › Português** for Portuguese labels, **Background** for color and opacity. |
+| Pit Rejoin | Racing Overlay › **Pit Rejoin** | Turn the widget on. Set **Pit loss** and **Traffic** if you want. |
+| Rejoin Helper | Racing Overlay › **Rejoin Helper** | Turn the widget on. Set the **Green / Red** limits and **Show only if**. |
+| PitBrake | Racing Overlay › **PitBrake** | Turn the widget on. |
+| Weather layout | Racing Overlay › **Weather** › **Layout** | Choose **Vertical** or **Horizontal**. |
+| Radar style | Racing Overlay › **Radar** | Check **Radar style**. |
+| Stream Chat | Racing Overlay › **Twitch Chat** | Fill in your Twitch / YouTube info and choose **Show chat from** and **Chat style**. |
+| Counters | Racing Overlay › **Counters** | Turn the widget on and choose Twitch / YouTube in **Show Counters**. |
+| Fastest Lap column | Racing Overlay › **Standings** › column editor | Drag **Fastest Lap** into the columns. |
+| Column Titles | Racing Overlay › **Standings** › **Column Titles** | Check it. Only shows with **Show Headers** on and the Last Lap or Fastest Lap column in use. |
+| Last Lap | Racing Overlay › **Relatives** › **Last Lap** | Check it. |
+| Country Flag | Racing Overlay › **Relatives** › **Country Flag** | Check it. |
+| Name style | Racing Overlay › **Relatives** › Driver Name Style |
