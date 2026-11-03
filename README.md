@@ -8,10 +8,11 @@ A patch for the **Kapps** iRacing overlay that adds new widgets, improves the ex
 
 ## Installation
 
-1. Download **`atualizar-kapps.bat`** (just this one file).
-2. Double-click it.
-3. Press **1** (or wait 10 seconds). It downloads the latest mods and applies them.
-4. Wait for **"Done! Mods applied."** and open Kapps again.
+1. Download the latest version of Kapps 1.24.40 
+2. Download **`atualizar-kapps.bat`** (just this one file).
+3. Double-click it.
+4. Press **1** (or wait 10 seconds). It downloads the latest mods and applies them.
+5. Wait for **"Done! Mods applied."** and open Kapps again.
 
 What the installer does:
 - Downloads the latest version of the mods from this GitHub repository, so you always get the newest one.
